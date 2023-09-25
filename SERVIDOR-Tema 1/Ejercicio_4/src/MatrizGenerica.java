@@ -42,20 +42,44 @@ public class MatrizGenerica<T> {
         return elemento;
     }
 
+//    @Override
+//    public String toString() {
+//        String cadena = "";
+//
+//        Iterator<Celda<T>> it = matriz.iterator();
+//
+//        while (it.hasNext()) {
+//            Celda<T> celdaIt = it.next();
+//            if (celdaIt.getValor() != null) {
+//                cadena += celdaIt.toString();
+//            }
+//        }
+//
+//        return cadena;
+//
+//    }
     @Override
     public String toString() {
-        String cadena = "";
+        StringBuilder cadena = new StringBuilder();
 
-        Iterator<Celda<T>> it = matriz.iterator();
+        int contadorFila = 1;
+        int contadorColumna = 1;
+        T elemento = null;
 
-        while (it.hasNext()) {
-            Celda<T> celdaIt = it.next();
-            if (celdaIt.getValor() != null) {
-                cadena += celdaIt.toString();
+        while (contadorFila < MAX_FILAS) {
+            cadena.append("| ");
+            while (contadorColumna < MAX_COLUMNAS) {
+                elemento = get(contadorFila, contadorColumna);
+                contadorColumna++;
+                cadena.append(elemento.toString()).append(" | ");
             }
+            contadorColumna = 1;
+            contadorFila++;
+            cadena.append("\n");
         }
 
-        return cadena;
+        return cadena.toString();
 
     }
+
 }
