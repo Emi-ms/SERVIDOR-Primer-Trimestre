@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ejercicio_21_Repaso_Bucles/Ejercicio_21_Repaso_Bucles.iml" filepath="$PROJECT_DIR$/Ejercicio_21_Repaso_Bucles/Ejercicio_21_Repaso_Bucles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ejercicio_21_Repaso_Condicional/Ejercicio_21_Repaso_Condicional.iml" filepath="$PROJECT_DIR$/Ejercicio_21_Repaso_Condicional/Ejercicio_21_Repaso_Condicional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ejercicio_23_Repaso_Condicional/Ejercicio_23_Repaso_Condicional.iml" filepath="$PROJECT_DIR$/Ejercicio_23_Repaso_Condicional/Ejercicio_23_Repaso_Condicional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ejercicio_26_Repaso_Bucles/Ejercicio_26_Repaso_Bucles.iml" filepath="$PROJECT_DIR$/Ejercicio_26_Repaso_Bucles/Ejercicio_26_Repaso_Bucles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ejercicio_69_Repaso_Bucles/Ejercicio_69_Repaso_Bucles.iml" filepath="$PROJECT_DIR$/Ejercicio_69_Repaso_Bucles/Ejercicio_69_Repaso_Bucles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Primer Trimestre.iml" filepath="$PROJECT_DIR$/.idea/Primer Trimestre.iml" />
+    </modules>
+  </component>
+</project>
