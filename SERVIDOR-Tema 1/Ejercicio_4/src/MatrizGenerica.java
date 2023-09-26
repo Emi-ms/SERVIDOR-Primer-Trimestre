@@ -42,22 +42,6 @@ public class MatrizGenerica<T> {
         return elemento;
     }
 
-//    @Override
-//    public String toString() {
-//        String cadena = "";
-//
-//        Iterator<Celda<T>> it = matriz.iterator();
-//
-//        while (it.hasNext()) {
-//            Celda<T> celdaIt = it.next();
-//            if (celdaIt.getValor() != null) {
-//                cadena += celdaIt.toString();
-//            }
-//        }
-//
-//        return cadena;
-//
-//    }
     @Override
     public String toString() {
         StringBuilder cadena = new StringBuilder();
@@ -71,7 +55,8 @@ public class MatrizGenerica<T> {
             while (contadorColumna < MAX_COLUMNAS) {
                 elemento = get(contadorFila, contadorColumna);
                 contadorColumna++;
-                cadena.append(elemento.toString()).append(" | ");
+                if(elemento == null){cadena.append(" | ");}else{
+                cadena.append(elemento.toString()).append(" | ");}
             }
             contadorColumna = 1;
             contadorFila++;

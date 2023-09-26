@@ -5,31 +5,30 @@ public class Main {
 
     public static int menu() {
         int opcion;
-
-
-        String cadena = "----- M E N U ------\n";
-        cadena += "Opcion 1: Crear Matriz\n";
-        cadena += "Opcion 2: Rellena Matriz\n";
-        cadena += "Opcion 3: Mostrar Matriz\n";
-        cadena += "Opcion 4: Mostrar un elemento de la Matriz\n";
         do {
+            String cadena = "----- M E N U ------\n";
+            cadena += "Opcion 1: Crear Matriz\n";
+            cadena += "Opcion 2: Rellena Matriz\n";
+            cadena += "Opcion 3: Mostrar Matriz\n";
+            cadena += "Opcion 4: Mostrar un elemento de la Matriz\n";
+            cadena += "Opcion 5: SALIR\n";
+
             System.out.println(cadena);
             opcion = EntradaTeclado.pedirEntero("Introduzca una opcion");
-        } while (opcion < 1 || opcion > 4);
-
+        } while (opcion < 1 || opcion > 5);
 
         return opcion;
     }
 
     public static void main(String[] args) {
-        String terminar = "";
+
+        int opcion;
+        MatrizGenerica<Integer> matriz = null;
+        int filaLimite = 0;
+        int columnaLimite = 0;
         do {
 
-
-            int opcion = menu();
-            MatrizGenerica<Integer> matriz = null;
-            int filaLimite = 0;
-            int columnaLimite = 0;
+            opcion = menu();
 
             switch (opcion) {
 
@@ -56,22 +55,40 @@ public class Main {
                             contadorColumna = 1;
                             contadorFila++;
                         }
-
+                        System.out.println("Matriz rellenada correctamente.");
+                    } else {
+                        System.out.println("No ha sido posible rellenar la Matriz, primero debe crear una.");
                     }
                 }
 
-                case 3 -> System.out.println(matriz.toString());
+                case 3 -> {
+                    if (matriz != null) {
+                        System.out.println(matriz.toString());
+                    } else {
+                        System.out.println("No ha sido posible mostrar la Matriz, primero debe crear una.");
+                    }
+                }
 
                 case 4 -> {
-                    int fila = EntradaTeclado.pedirEntero("Indique la fila del elemento");
-                    int columna = EntradaTeclado.pedirEntero("Indique la columna del elemento");
+                    int fila = EntradaTeclado.pedirEntero("Indique la fila del elemento.");
+                    int columna = EntradaTeclado.pedirEntero("Indique la columna del elemento.");
 
-                    int elemento = matriz.get(fila, columna);
-                    System.out.println("El elemento es: " + elemento);
+                    Integer elemento = matriz.get(fila, columna);
+                    if (elemento != null) {
+                        System.out.println("El elemento es: " + elemento);
+                    } else {
+                        System.out.println("En la posicion elegida no hay ningun elemento.");
+                    }
+                }
+                case 5 -> {
+                    System.out.println("Saliendo de la aplicacion...HASTA PRONTO!!!");
+                }
+
+                default -> {
+                    System.out.println("Opcion no valida");
                 }
             }
 
-            terminar = EntradaTeclado.pedirCadena("Pulse S para terminar, otra tecla para continuar");
-        } while (terminar.equalsIgnoreCase("S"));
+        } while (opcion != 5);
     }
 }
